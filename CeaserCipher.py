@@ -18,7 +18,6 @@ def reading_Student_data(filename):
     print("Data From File",reading)
 
 def Genrating_Key(SID,age,string_ID,student_name): 
-   
     sum = int(0) 
     while (SID != 0): 
           sum = sum + int(SID % 10) 
@@ -54,15 +53,12 @@ def AVG_Key():
           key_sum = key_sum + int(key_text % 10) 
           key_text = int(key_text/10)      
     sum_of_Key=key_sum
-
-
     average_of_key = sum_of_Key/lengthofkey
     AVG_Key.shifting_value = round(average_of_key)
 
     print("Shift Cipher Key Value ::   ",AVG_Key.shifting_value)
 
 def encryption(string,c_type):
-
     shift = AVG_Key.shifting_value
     cipher = ''
     for student_name in string: 
@@ -78,13 +74,6 @@ def encryption(string,c_type):
 
             cipher_file = open("Orignal.txt","w")
             cipher_file.write(cipher)
-
-           
-
-
-
-
-            
 
         elif c_type== 'right':
 
@@ -109,7 +98,6 @@ def final_cipher():
     cipher=c_f.read()
     k_f=open("mykey.txt","r")
     key=k_f.read()
-    # c = "".join(map(lambda x,y: x+y, cipher, key))
     leng_cipher=len(cipher)
     leng_key=len(key)
     if leng_cipher > leng_key :
@@ -119,7 +107,6 @@ def final_cipher():
         n_c_f=open("cipher.txt","w")
         n_c_f.write(final_cipher)
 
-        # print(final_cipher)
     elif leng_key>leng_cipher:
         c = "".join(map(lambda x,y: x+y, cipher, key))
         a=key[leng_cipher:]    
@@ -173,8 +160,6 @@ if __name__ == "__main__":
     
         student_name = input("Enter Your Full Name :: ")
 
-
-    
         student_age = input("Enter Your Age :: ")
         
         student_age=int(student_age)
@@ -189,8 +174,6 @@ if __name__ == "__main__":
 
         shift = AVG_Key.shifting_value
 
-        
-
         plain_file= open('plaintext.txt','r')
         text=plain_file.read()
 
@@ -198,11 +181,9 @@ if __name__ == "__main__":
         encryption(text,c_type)
         final_cipher()
         
-
     elif user_input== 'D':
         finalDecryption()
             
-
         read_f=open("Orignal.txt","r")
         encrypted_text = read_f.read()
 
@@ -212,9 +193,6 @@ if __name__ == "__main__":
         c_type='left'
         encryption(encrypted_text,c_type)
         
-
-
-
     elif user_input=='e':
         print(" =========================Exit=============================")
         exit()
