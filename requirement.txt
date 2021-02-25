@@ -1,0 +1,3 @@
+io.py
+re.py
+colorama.py

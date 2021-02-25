@@ -1,8 +1,7 @@
-import collections
 import io
 import re
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 colorama.init(autoreset=True)
 
 def student_Data(f,student_ID,student_name,student_age):
@@ -13,12 +12,10 @@ def student_Data(f,student_ID,student_name,student_age):
     f.write(str(student_age))
     f.close()
 
-
 def reading_Student_data(filename):
     f2= open(filename, "r")
     reading=f2.read()
     print("Data From File",reading)
-
 
 def Genrating_Key(SID,age,string_ID,student_name): 
    
@@ -46,7 +43,6 @@ def Genrating_Key(SID,age,string_ID,student_name):
     key_file.write(final_encryption_key)
     key_file.close()
 
-
 def AVG_Key():
 
     mykeyfile=io.open("mykey.txt","r")
@@ -64,11 +60,6 @@ def AVG_Key():
     AVG_Key.shifting_value = round(average_of_key)
 
     print("Shift Cipher Key Value ::   ",AVG_Key.shifting_value)
-
-
-
-
-
 
 def encryption(string,c_type):
 
@@ -113,8 +104,6 @@ def encryption(string,c_type):
     elif c_type=='left':
         print("Now After Decryption Text  is ::  ",str(cipher))
     
-              
-
 def final_cipher():
     c_f=open("cipher.txt",'r')
     cipher=c_f.read()
@@ -146,7 +135,6 @@ def final_cipher():
         pass
     print("Now Final Cipher Text  is ::  ",str(final_cipher))
     
-
 def finalDecryption():
     c_f=open("cipher.txt",'r')
     cipher=c_f.read()
@@ -160,7 +148,6 @@ def finalDecryption():
     f_d_c=open("Orignal.txt","w")
     f_d_c.write(cipher)
 
- 
 if __name__ == "__main__":
    
 
